@@ -9,7 +9,7 @@ const items = ref([
 ]);
 
 // Refs
-const newItem = ref('');
+const newItem = ref(null);
 const highPriorityItem = ref(false);
 const editing = ref(false);
 
@@ -22,6 +22,7 @@ const saveItem = () => {
   });
   newItem.value = '';
   highPriorityItem.value = '';
+  console.log(items.value, 'resss');
 };
 
 const doEdit = (e) => {
@@ -34,11 +35,11 @@ const togglePurchased = (item) => {
   item.purchased = !item.purchased;
 };
 
-const characterCount = computed(() => newItem.value.length)
+const characterCount = computed(() => newItem.value.length);
 
 const reversedItems = computed(() => {
-return [...items.value].reverse()
-})
+  return [...items.value].reverse();
+});
 </script>
 
 <template>
@@ -49,22 +50,22 @@ return [...items.value].reverse()
     </div>
     <div v-else class="btn btn-primary" @click="doEdit(true)">Add an Item</div>
   </div>
-<div v-if="editing" class="flex">
-  <p class="count">{{characterCount}}/200</p>
-  <a target="_blank" v-bind:href="newItem">Dynamick Link</a>
-</div>
+  <div v-if="editing" class="flex">
+    <p class="count">{{ characterCount }}/200</p>
+    <a target="_blank" v-bind:href="newItem">Dynamick Link</a>
+  </div>
   <form v-if="editing" @submit.prevent="saveItem" class="add-item-form">
-    <input v-model.trim="newItem" type="text" placeholder="Add an Item" />
+    <input v-model="newItem" type="text" placeholder="Add an Item" />
 
     <label>
       <input v-model="highPriorityItem" type="checkbox" />
       High Priority
     </label>
-    <button v-bind:disabled="newItem.length < 2" class="btn btn-primary">
+    <button :disabled="newItem.length < 2" class="btn btn-primary">
       Save Item
     </button>
   </form>
-    
+<!-- <a href="tel:+998943083808">Click Here To Call Support 94 308 38 08</a> -->
   <ul>
     <li
       v-for="(item, index) in reversedItems"

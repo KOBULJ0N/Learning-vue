@@ -1,0 +1,59 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "Congrats Programmer",
+      "author": "typicode"
+    },
+    {
+      "title": "1",
+      "author": "1",
+      "id": 3
+    },
+    {
+      "title": "11",
+      "author": "22",
+      "id": 4
+    },
+    {
+      "title": "44",
+      "author": "4",
+      "id": 5
+    },
+    {
+      "title": "qobiljon",
+      "author": "rasuljonov",
+      "id": 8
+    },
+    {
+      "title": "something",
+      "author": "Something else",
+      "id": 9
+    },
+    {
+      "title": "hello",
+      "author": "hi",
+      "id": 10
+    },
+    {
+      "title": "hello",
+      "author": "he",
+      "id": 11
+    },
+    {
+      "title": "API",
+      "author": "Me",
+      "id": 12
+    },
+    {
+      "title": null,
+      "author": null,
+      "id": 13
+    }
+  ]
+}

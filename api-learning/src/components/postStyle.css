@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+button {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+}
+.del {
+width: 90px;
+height: 25px;
+padding: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+div {
+  border-radius: 5px;
+}
+
+.Container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  flex-direction: column;
+  gap: 30px;
+  background-color: aqua;
+  padding-bottom: 37px;
+}
+
+.Title {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(29, 39, 120);
+  margin: 0 auto;
+  padding: 0px 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+input:focus {
+  border: 2px solid blue;
+}
+
+label {
+  font-size: 18px;
+  color: rgb(5, 41, 121);
+  font-weight: 600;
+}
+
+.wrapper {
+  width: 40%;
+  display: flex;
+  background-color: #fff;
+  padding: 10px;
+  height: 350px;
+  overflow-y: scroll;
+}
+
+.contenTitle {
+  font-weight: 700;
+  font-size: 24px;
+  color: rgb(8, 30, 77);
+  padding: px;
+}
+
+.content {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid cyan;
+  margin: 10px 0; 
+  padding: 20px;
+
+}
+
+.flex-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+gap: 50px
+}
