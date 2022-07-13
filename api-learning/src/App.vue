@@ -1,13 +1,7 @@
 <script setup>
-import Posts from './components/Posts.vue';
-import Loading from './components/Loading.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <Suspense>
-    <Posts />
-    <template #fallback>
-      <Loading />
-    </template>
-  </Suspense>
+<RouterView/>
 </template>

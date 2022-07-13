@@ -26,21 +26,17 @@ button:hover {
   background-color: #45a049;
 }
 
-
-div {
-  border-radius: 5px;
-}
-
 .Container {
   display: flex;
   align-items: center;
   width: 100%;
-  height: auto;
+  height: 100vh;
   padding: 10px;
   flex-direction: column;
   gap: 30px;
   background-color: aqua;
   padding-bottom: 37px;
+  justify-content: center;
 }
 
 .Title {
@@ -85,19 +81,20 @@ label {
   display: flex;
   background-color: #fff;
   padding: 10px;
-  height: 350px;
+  height: auto;
   overflow-y: scroll;
+  
 }
 
 .contenTitle {
   font-weight: 700;
   font-size: 24px;
   color: rgb(8, 30, 77);
-  padding: px;
+  /* padding: px; */
 }
 
 .content {
-  background-color: #fff;
+  background-color: rgb(133, 205, 236);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -105,12 +102,12 @@ label {
   border: 2px solid cyan;
   margin: 10px 0; 
   padding: 20px;
-
+  align-items: center;
 }
 
 .flex-container {
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
-gap: 50px
+padding-bottom: 30px;
 }
