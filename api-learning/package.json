@@ -12,7 +12,10 @@
     "element-plus": "^2.2.8",
     "json-server": "^0.17.0",
     "pinia": "^2.0.14",
+    "v-pagination-3": "^0.1.7",
     "vue": "^3.2.37",
+    "vue-paginate": "^3.6.0",
+    "vue-pagination-2": "^3.1.0",
     "vue-router": "^4.1.1"
   },
   "devDependencies": {

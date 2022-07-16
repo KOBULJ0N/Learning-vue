@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import AddVue from '../components/Add.vue';
-import EditPage from '../views/EditPage.vue'
+import AddPage from '../views/AddPage.vue';
+import EditPage from '../views/EditPage.vue';
 import home from '../views/home.vue';
 const routes = [
   {
@@ -9,9 +9,9 @@ const routes = [
     component: home,
   },
   {
-    path: '/addPage',
+    path: '/test/add/page',
     name: 'addPage',
-    component: AddVue,
+    component: AddPage,
   },
   {
     path: '/editPage/:id',

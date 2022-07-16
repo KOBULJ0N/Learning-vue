@@ -1,44 +1,104 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "Kobuljon server",
-      "author": "typicode"
-    },
-    {
-      "title": "something",
-      "author": "Something else",
-      "id": 9
-    },
-    {
       "title": "hello",
       "author": "hi",
-      "id": 10
+      "id": 2
     },
     {
       "title": "hello",
       "author": "hollaaa",
-      "id": 11
-    },
-    {
-      "title": "API",
-      "author": "Me",
-      "id": 12
-    },
-    {
-      "title": "new onee",
-      "author": "by Kobuljon",
-      "id": 17
+      "id": 3
     },
     {
       "title": "newUser",
       "author": "by Kobuljon",
-      "id": 18
+      "id": 6
     },
     {
       "title": "somethingnew",
       "author": "hello",
+      "id": 7
+    },
+    {
+      "title": "something added",
+      "author": "By someonee",
+      "id": 8
+    },
+    {
+      "title": "title",
+      "author": "author",
+      "id": 9
+    },
+    {
+      "title": "1212",
+      "author": "121212",
+      "id": 10
+    },
+    {
+      "title": "Qobiljon",
+      "author": "Rasuljonov",
+      "id": 11
+    },
+    {
+      "title": "Kobuljon",
+      "author": "Rasuljonov",
+      "id": 12
+    },
+    {
+      "title": "123",
+      "author": "123",
+      "id": 13
+    },
+    {
+      "title": "789",
+      "author": "789",
+      "id": 14
+    },
+    {
+      "title": "987",
+      "author": "987",
+      "id": 15
+    },
+    {
+      "title": "465",
+      "author": "123",
+      "id": 16
+    },
+    {
+      "title": "963",
+      "author": "369",
+      "id": 17
+    },
+    {
+      "title": "dfasd",
+      "author": "asd",
+      "id": 18
+    },
+    {
+      "title": "hellooo",
+      "author": "world",
+      "id": 19
+    },
+    {
+      "title": "new owner",
+      "author": "new author",
       "id": 20
+    },
+    {
+      "title": "title",
+      "author": "author",
+      "id": 21
+    },
+    {
+      "title": "wassup",
+      "author": "harvey",
+      "id": 22
+    },
+    {
+      "title": "can't complain",
+      "author": "whoever",
+      "id": 23
     }
   ]
 }

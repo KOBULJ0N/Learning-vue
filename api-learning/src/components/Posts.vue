@@ -3,20 +3,25 @@ import { instance } from '../composables/api';
 import { onBeforeMount, reactive, ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { ElMessage } from 'element-plus';
+import { ElMessage, ElPagination } from 'element-plus';
 
 
-const router = useRouter()
+// Variables
+
+const param = reactive({
+  page: 1,
+  limit: 3,
+  totalPage: 0,
+});
+
+const router = useRouter();
 const info = ref(null);
 
-// Getting Data from API
+// Functions
 
-onBeforeMount(() => {
-  (async function () {
-    const response = await instance.get('posts');
-    info.value = response.data;
-  })();
-});
+const pagi = (e) => {
+console.log(e)
+}
 
 const open = () => {
   ElMessage({
@@ -25,17 +30,41 @@ const open = () => {
   });
 };
 
-// Function Delete
+const layout = (e) => {
 
+}
 
+// Pagination Changer //
+const nextFunc = async (e) => {
+  const response = await instance.get(`posts?_page=${e}&_limit=${param.limit}`);
+  info.value = response.data;
+};
 
+// Getting Data from API //
+
+async function getPost() {
+  const response = await instance.get(`posts`, {
+    params: {
+      _page: param.page,
+      _limit: param.limit,
+    },
+  });
+  info.value = response.data;
+  param.totalPage = response.headers['x-total-count'];
+}
+onBeforeMount(async () => {
+  await getPost();
+});
+
+// Function Delete //
 
 async function deleted(id) {
   try {
     await instance.delete(`posts/${id}`);
-    let result = await instance.get('posts');
-      info.value = result.data;
-     ElMessage({
+    getPost();
+    // let result = await instance.get('posts');
+    // info.value = result.data;
+    ElMessage({
       message: 'Sucessfully Deleted',
       type: 'success',
     });
@@ -44,36 +73,50 @@ async function deleted(id) {
   }
 }
 
-// Method Edit
+// Method Edit //
 
 function edit(id) {
-router.push(`/editPage/${id}`)
+  router.push(`/editPage/${id}`);
 }
-
 </script>
 
 <template>
   <div class="Container">
-    <div class="Title">Data from API</div>
-    
+    <button @click="router.push('/test/add/page')">Add New</button>
+
     <div class="wrapper">
       <div class="flex-container">
-        <button @click="router.push('/addPage')" >Add New</button>
         <div class="content" v-for="(item, index) in info" :key="index">
           <div>ID: {{ item.id }}</div>
           <div>Title: {{ item.title }}</div>
           <div>Author: {{ item.author }}</div>
-
           <button class="del" @click="deleted(item.id)">Delete</button>
-           <button class="del" @click="edit(item.id)">edit</button>
+          <button class="del" @click="edit(item.id)">edit</button>
         </div>
       </div>
+    </div>
 
-      <!-- <div class="contenTitle">Author</div> -->
+    <div class="flex">
+      <!-- <pagination
+        v-model="param.page"
+        :records="param.totalPage"
+        :per-page="param.limit"
+        @paginate="nextFunc"
+      /> -->
+
+      <el-pagination
+        
+        background
+        layout="prev, pager, next, "
+        :total="20"
+        :page-size="param.limit"
+        :pager-count="5"
+        @update:current-page
+
+      />
     </div>
   </div>
 </template>
-
 
 <style>
 @import './postStyle.css';
