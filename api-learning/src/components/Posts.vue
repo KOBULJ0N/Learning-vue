@@ -6,8 +6,6 @@ import { useRouter } from 'vue-router';
 import { ElMessage, ElPagination } from 'element-plus';
 
 
-// Variables
-
 const param = reactive({
   page: 1,
   limit: 3,
@@ -105,13 +103,13 @@ function edit(id) {
       /> -->
 
       <el-pagination
-        
+      @current-change="nextFunc"
         background
         layout="prev, pager, next, "
         :total="20"
         :page-size="param.limit"
         :pager-count="5"
-        @update:current-page
+    @click="prev"
 
       />
     </div>
