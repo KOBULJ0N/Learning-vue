@@ -60,6 +60,7 @@ form {
   flex-direction: column;
   width: 40%;
   padding: 5px;
+  
 }
 
 input {
@@ -92,6 +93,7 @@ label {
   justify-content: center;
   min-width: 529px;
   min-height: 508px;
+  border-radius: 5px;
  
   /* overflow-y: scroll;   */
 }
@@ -104,6 +106,7 @@ label {
 }
 
 .content {
+  font-size: 20px;
   background-color: rgb(207, 212, 213);
   width: 250px;
   height: auto;
@@ -114,6 +117,7 @@ label {
   text-align: center;
   gap: 10px;
   border: 2px solid black;
+  border-radius: 5px;
   margin: 10px 0; 
   /* padding: 20px; */
    

@@ -1,25 +1,20 @@
 <script setup>
 import { instance } from '../composables/api';
 import { onBeforeMount, reactive, ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
 import { ElMessage, ElPagination } from 'element-plus';
 
-
 const param = reactive({
-  page: 1,
-  limit: 3,
+  limit: 2,
   totalPage: 0,
 });
 
 const router = useRouter();
+const route = useRoute();
 const info = ref(null);
-
+const page = route.params.id;
 // Functions
-
-const pagi = (e) => {
-console.log(e)
-}
 
 const open = () => {
   ElMessage({
@@ -28,14 +23,11 @@ const open = () => {
   });
 };
 
-const layout = (e) => {
-
-}
-
 // Pagination Changer //
 const nextFunc = async (e) => {
   const response = await instance.get(`posts?_page=${e}&_limit=${param.limit}`);
   info.value = response.data;
+  router.push(`/home/${e}`);
 };
 
 // Getting Data from API //
@@ -43,7 +35,7 @@ const nextFunc = async (e) => {
 async function getPost() {
   const response = await instance.get(`posts`, {
     params: {
-      _page: param.page,
+      _page: page,
       _limit: param.limit,
     },
   });
@@ -74,7 +66,7 @@ async function deleted(id) {
 // Method Edit //
 
 function edit(id) {
-  router.push(`/editPage/${id}`);
+  router.push(`/edit/page/${id}`);
 }
 </script>
 
@@ -85,7 +77,9 @@ function edit(id) {
     <div class="wrapper">
       <div class="flex-container">
         <div class="content" v-for="(item, index) in info" :key="index">
-          <div>ID: {{ item.id }}</div>
+          <div>
+            <b> ID:{{ item.id }}</b>
+          </div>
           <div>Title: {{ item.title }}</div>
           <div>Author: {{ item.author }}</div>
           <button class="del" @click="deleted(item.id)">Delete</button>
@@ -103,14 +97,14 @@ function edit(id) {
       /> -->
 
       <el-pagination
-      @current-change="nextFunc"
+        @current-change="nextFunc"
+        :current-page="Number(route.params.id)"
         background
         layout="prev, pager, next, "
         :total="20"
         :page-size="param.limit"
         :pager-count="5"
-    @click="prev"
-
+        @click="prev"
       />
     </div>
   </div>
