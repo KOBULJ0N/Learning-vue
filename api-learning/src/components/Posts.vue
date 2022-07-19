@@ -72,6 +72,7 @@ function edit(id) {
 
 <template>
   <div class="Container">
+    <h2>{{ $t("message.greeting") }}</h2>
     <button @click="router.push('/test/add/page')">Add New</button>
 
     <div class="wrapper">
@@ -85,6 +86,7 @@ function edit(id) {
           <button class="del" @click="deleted(item.id)">Delete</button>
           <button class="del" @click="edit(item.id)">edit</button>
         </div>
+            <h1 v-show="!info?.length">Uups No Data :(</h1>
       </div>
     </div>
 
@@ -101,7 +103,7 @@ function edit(id) {
         :current-page="Number(route.params.id)"
         background
         layout="prev, pager, next, "
-        :total="20"
+        :total="Number(param.totalPage)"
         :page-size="param.limit"
         :pager-count="5"
         @click="prev"
