@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+.box {
+display: flex;
+flex-direction: column;
+margin-left:300px;
+gap: 20px;
+width: 1092px;
+margin-top: 10px;
+}
+
+
+
+.header {
+padding: 10px;
+border: 2px solid black;
+margin: 0 16px;
+display: flex;
+justify-content: space-between;
+}
+
+
+.main {
+border: 2px solid green;
+height: auto;
+margin: 0 16px;
+}
+
+
+
+.subtitle {
+font-family: sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+color: #313131;
+
+}
+
+.description {
+font-family: sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 14px;
+
+text-align: right;
+/* identical to box height, or 117% */
+/* Light/D Gray 100 */
+color: #899499;
+}
+
+.text {
+
+font-family: sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height, or 117% */
+
+
+/* Light/D.Black 100 */
+
+color: #313131;
+}
+
+
+th {
+font-family: sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 12px;
+/* identical to box height, or 120% */
+text-transform: uppercase;
+/* Light/D Gray 100 */
+color: #899499 !important;
+}
+
+tr {
+font-family: sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 14px;
+}
+
+
+.ant-btn {
+width: 150px;
+height: 30px;
+padding: 0 16px;
+
+}
+
+.ant-table-tbody {
+border: none;
+}
+
